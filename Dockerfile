@@ -13,7 +13,7 @@ ENV AIS_PORT=
 # Mode 3 : File
 ENV AIS_FILE=
 
-# Tag blocks directory (at run time, speedup with: "--mount type=tmpfs,destination=/tagblocks")
+# Tag blocks directory (at runtime, speed up with: "--mount type=tmpfs,destination=/tagblocks")
 ENV AIS_TAGBLOCKS_DIR=/tagblocks
 
 RUN apk add gpsd-clients jq &&\

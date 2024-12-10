@@ -26,7 +26,7 @@ docker run -it --rm \
 
 # File with bind mount
 docker run -it --rm --entrypoint="" \
-    --mount type=tmpfs,tmpfs-mode=1777,destination=/tagblocks \
+    --mount type=tmpfs,destination=/tagblocks \
     -v ${PWD}/data/norwegian.raw:/data.raw -e AIS_FILE=/data.raw \
     gpsd-timestamp
 
@@ -46,3 +46,5 @@ tar -xOzf data/norwegian.raw.tgz norwegian.raw | docker run -i --rm \
     --mount type=tmpfs,destination=/tagblocks \
     gpsd-timestamp
 ```
+
+Note: at runtime, speed up with `--mount type=tmpfs,destination=/tagblocks`
